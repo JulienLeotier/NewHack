@@ -1,15 +1,31 @@
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>IdeaDisco</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  <div class="container">
+    <div class="addId">
+      <div>
+        <input id="ok" type="text" placeholder="name of idea">
+      </div>
+      <br>
+      <textarea id="yes" name="ideaContent" rows="8" cols="80" placeholder="write your ideas here..."></textarea>
+      <div>
+        <button type="button" id="add">add</button>
+      </div>
+    </div>
+    <div id="AffId">
 
-  {{> hello}}
-  {{> info}}
+    </div>
+  </div>
 </body>
 
-<template name="hello">
+<!--<template name="hello">
   <button>Click Me</button>
   <p>You've pressed the button {{counter}} times.</p>
 </template>
@@ -22,4 +38,4 @@
     <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
     <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
   </ul>
-</template>
+</template>-->
