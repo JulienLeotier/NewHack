@@ -19,6 +19,14 @@
   </nav>
 
   <div class="container">
+    <div class="addId col s12 m4 l8">
+      {{CreateCard}}
+    </div>
+    <div id="AffId">
+      <!--{{#each cards}}
+        {{> card}}
+      {{/#each}}-->
+    </div>
   </div>
 </body>
 
@@ -45,11 +53,11 @@
 </div>
 </template>-->
 
-<template name="createCard">
+<template name="CreateCard">
   <form class="new-card">
     <input type="text" name="title" placeholder="Your Idea...">
     <input type="text" name="content" placeholder="Your content">
-    <input type="submit" value="Press me !">
+    <button class="waves-effect waves-light btn">Press me !</button>
   </form>
 </template>
 

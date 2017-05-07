@@ -4,6 +4,7 @@ Cards = new Mongo.Collection('cards');
 
 import './main.html';
 
+
 // ROUTES
 Router.route('/', function () {
   this.render('Home', {
@@ -18,7 +19,7 @@ Router.route('/ideas', {
 
 Router.route('/ideas/new', {
   name: 'new_idea',
-  template: 'new_idea'
+  template: 'CreateCard'
 });
 
 
