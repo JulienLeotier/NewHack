@@ -12,22 +12,11 @@
     <div class="nav-wrapper">
       <a href="#" class="brand-logo"></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="{{pathFor route='new_idea'}}">I have an idea!</a></li>
-        <li><a href="{{pathFor route='ideas'}}">Ideas</a></li>
+        <li><a href="{{pathFor route='newIdea'}}">I have an idea!</a></li>
+        <li><a href="{{pathFor route='listIdeas'}}">Ideas</a></li>
       </ul>
     </div>
   </nav>
-
-  <div class="container">
-    <div class="addId col s12 m4 l8">
-      {{CreateCard}}
-    </div>
-    <div id="AffId">
-      <!--{{#each cards}}
-        {{> card}}
-      {{/#each}}-->
-    </div>
-  </div>
 </body>
 
 <template name="newIdea">
@@ -53,14 +42,22 @@
       </div>
     </form>
   </div>
-<!--   <form>
-        <input type="text" name="title" placeholder="title ...">
-        <input type="text" name="content" placeholder="Describe your idea !">
-        <input type="submit" value="Add an Idea">
-    </form> -->
 </template>
 
-<template name="list_ideas">
-  idea1, idea2, etc.
-</template>
+<template name="listIdeas">
+{{#each ideas}}
+   <div class='col s12 m7'>
+     <h2 class='header'>{{ this.title }}</h2>
+     <div class='card horizontal'>
+       <div class='card-image'></div>
+       <div class='card-stacked'>
+         <div class='card-content'>
+           {{ this.content }}
+         </div>
+         <div class='card-action'><a class='Likes' href='#'>Likes : {{ this.likes }}</a></div>
+       </div>
+     </div>
+   </div>
+ {{/each}}   
+ </template>
 

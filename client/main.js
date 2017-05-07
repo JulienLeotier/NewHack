@@ -12,10 +12,14 @@ Router.route('/', function () {
   });
 });
 
-Router.route('/ideas', {
-   name: 'ideas',
-   template: 'list_ideas'
-});
+Router.route('/ideas', function () {
+  this.render('listIdeas', {
+     data: function () {
+      console.log(Ideas.find().fetch());
+      return {"ideas": Ideas.find().fetch() }  ;
+     }
+  });
+ }, { name: 'listIdeas' });
 
 Router.route('/ideas/new', {
   name: 'newIdea',
@@ -39,26 +43,4 @@ Template.newIdea.events({
     }
 });
 
-Template.card.onCreated(function cardOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
-});
 
-Template.card.helpers({
-  counter() {
-    return Template.instance().counter.get();
-  },
-});
-
-Template.card.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
-  },
-});
-
-Template.createCard.events({
-  'click button'(event, instance) {
-    Cards.insert(({}))
-  },
-});
