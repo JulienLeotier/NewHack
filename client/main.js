@@ -4,6 +4,24 @@ Cards = new Mongo.Collection('cards');
 
 import './main.html';
 
+// ROUTES
+Router.route('/', function () {
+  this.render('Home', {
+    data: function () { return []; }
+  });
+});
+
+Router.route('/ideas', {
+   name: 'ideas',
+   template: 'list_ideas'
+});
+
+Router.route('/ideas/new', {
+  name: 'new_idea',
+  template: 'new_idea'
+});
+
+
 Template.card.onCreated(function cardOnCreated() {
   // counter starts at 0
   this.counter = new ReactiveVar(0);

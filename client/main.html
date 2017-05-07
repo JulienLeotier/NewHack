@@ -8,17 +8,27 @@
 </head>
 
 <body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo"></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="{{pathFor route='new_idea'}}">I have an idea!</a></li>
+        <li><a href="{{pathFor route='ideas'}}">Ideas</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <div class="container">
-    <div class="addId">
-      {{CreateCard}}
-    </div>
-    <div id="AffId">
-      <!--{{#each cards}}
-        {{> card}}
-      {{/#each}}-->
-    </div>
   </div>
 </body>
+
+<template name="new_idea">
+  form to create a new idea
+</template>
+
+<template name="list_ideas">
+  idea1, idea2, etc.
+</template>
 
 <!--<template name="card">
   <div class='col s12 m7'>
