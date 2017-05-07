@@ -1,7 +1,7 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
-Cards = new Mongo.Collection('cards');
-
+import { Mongo } from 'meteor/mongo';
+ 
 import './main.html';
 
 
@@ -18,10 +18,26 @@ Router.route('/ideas', {
 });
 
 Router.route('/ideas/new', {
-  name: 'new_idea',
-  template: 'CreateCard'
+  name: 'newIdea',
+  template: 'newIdea'
 });
 
+Template.newIdea.events({
+    'submit form': function(){
+        event.preventDefault();
+      var titleVar = event.target.title.value;
+      var usernameVar = event.target.username.value;
+      var contentVar = event.target.content.value;
+      console.log(titleVar,usernameVar,contentVar);
+      Ideas.insert({
+          // username: usernameVar,
+          title: titleVar,
+          content: contentVar,
+          likes: 0,
+          // createdAt: new Date(), // current time
+    });
+    }
+});
 
 Template.card.onCreated(function cardOnCreated() {
   // counter starts at 0
