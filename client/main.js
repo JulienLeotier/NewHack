@@ -34,13 +34,20 @@ Template.newIdea.events({
       var contentVar = event.target.content.value;
       console.log(titleVar,usernameVar,contentVar);
       Ideas.insert({
-          // username: usernameVar,
+          username: usernameVar,
           title: titleVar,
           content: contentVar,
           likes: 0,
-          // createdAt: new Date(), // current time
+          createdAt: new Date(), // current time
     });
     }
 });
 
-
+Template.listIdea.events({
+  'click .Likes': function(){
+          console.log()
+          Ideas.update({
+          $set: { likes: this.Likes +1 },
+    });
+  }
+})

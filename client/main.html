@@ -4,6 +4,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>IdeaDisco</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
 
 </head>
 
@@ -19,8 +20,9 @@
   </nav>
 </body>
 
+<template name="home"></template>
 <template name="newIdea">
-  <div class="row">
+<div class="container">  <div class="row">
     <form class="col s12">
       <div class="row">
         <div class="input-field col s6">
@@ -41,11 +43,12 @@
         </div>
       </div>
     </form>
-  </div>
+  </div></div>
 </template>
 
 <template name="listIdeas">
-{{#each ideas}}
+<div class="container">
+  {{#each ideas}}
    <div class='col s12 m7'>
      <h2 class='header'>{{ this.title }}</h2>
      <div class='card horizontal'>
@@ -58,6 +61,7 @@
        </div>
      </div>
    </div>
- {{/each}}   
+ {{/each}} 
+</div>  
  </template>
 

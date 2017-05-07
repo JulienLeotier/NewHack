@@ -1,0 +1,10 @@
+.container{
+	padding-top: 30px;
+	display: block;
+	width: 80%;
+	margin: auto;
+}
+
+.nav{
+	background-color: #26a69a !important;
+}
