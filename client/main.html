@@ -10,33 +10,36 @@
 <body>
   <div class="container">
     <div class="addId">
-      <div>
-        <input id="ok" type="text" placeholder="name of idea">
-      </div>
-      <br>
-      <textarea id="yes" name="ideaContent" rows="8" cols="80" placeholder="write your ideas here..."></textarea>
-      <div>
-        <button type="button" id="add">add</button>
-      </div>
+      {{CreateCard}}
     </div>
     <div id="AffId">
-
+      <!--{{#each cards}}
+        {{> card}}
+      {{/#each}}-->
     </div>
   </div>
 </body>
-                <!--AffHack.innerHTML += "<div class='col s12 m7'><h2 class='header'>" + poid[i].datas.name + "</h2><div class='card horizontal'><div class='card-image'></div><div class='card-stacked'><div class='card-content'><p>" + poid[i].datas.contents + "</p></div><div class='card-action'><a class='Likes' data-id=" + poid[i].datas.id + " href='#'>Like " + poid[i].datas.likes + "</a></div></div></div></div>"-->
 
-<!--<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<!--<template name="card">
+  <div class='col s12 m7'>
+  <h2 class='header'>" + poid[i].datas.name + "</h2>
+  <div class='card horizontal'>
+    <div class='card-image'></div>
+    <div class='card-stacked'>
+      <div class='card-content'>
+        <p>" + poid[i].datas.contents + "</p>
+      </div>
+      <div class='card-action'><a class='Likes' data-id=" + poid[i].datas.id + " href='#'>Like :{{counter}}</a></div>
+    </div>
+  </div>
+</div>
+</template>-->
+
+<template name="createCard">
+  <form class="new-card">
+    <input type="text" name="title" placeholder="Your Idea...">
+    <input type="text" name="content" placeholder="Your content">
+    <input type="submit" value="Press me !">
+  </form>
 </template>
 
-<template name="info">
-  <h2>Learn Meteor!</h2>
-  <ul>
-    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
-    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
-    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
-    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
-  </ul>
-</template>-->
